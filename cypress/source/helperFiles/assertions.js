@@ -1,9 +1,10 @@
 "use strict";
+const { count } = require("console");
 const actions = require("../helperFiles/actions.js");
 
 let assertions = function () {
-    this.elementColorValidator = function (element, color) {
-        cy.get('div.step-elem').should('have.class', 'active')
+    this.valNuberTasks = function (count) {
+        cy.get('ul.todo-list li').should('have.length', count)
     }
 
 };
