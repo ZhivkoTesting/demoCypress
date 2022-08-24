@@ -2,9 +2,9 @@
 const actions = require("../helperFiles/actions.js");
 
 let pageObjects = function () {
-    this.newTaskCreator = function (newTaskName) {
-        let elNewTaskName = ("input.new-todo.ng-pristine.ng-untouched.ng-valid")
-        actions.inputTextEnter(elNewTaskName, newTaskName)
+    this.newTaskCreator = function (newTask) {
+        let elNewTaskName = ("input.new-todo")
+        actions.inputTextEnter(elNewTaskName, newTask.name)
     }
 
 };

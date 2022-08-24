@@ -1,5 +1,12 @@
 module.exports = {
-  newTasks: [
-    {},
+  newTasks: [{
+      name: "First Note"
+    },
+    {
+      name: "Second Note"
+    },
+    {
+      name: "Third Note"
+    },
   ]
 };

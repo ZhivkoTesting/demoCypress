@@ -12,7 +12,10 @@ describe('Demo ToDo List', () => {
   });
 
   it("Shall create new tasks", function () {
-    pageObjects.newTaskCreator("aaaa")
+    for (let newTask of data.newTasks) {
+       pageObjects.newTaskCreator(newTask)
+    } 
+   
   });
 
 });
