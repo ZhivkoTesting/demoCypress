@@ -65,7 +65,19 @@ let actions = function () {
     }).type(input).type('{enter}');
 
   };
+  this.clickButtonForce = function (element, index) {
+    if (!index) {
+      index = 0;
+    }
+    cy.get(element, {
+      timeout: 10000
+    }).eq(index).click({
+      force: true
+    }, {
+      timeout: 10000
+    });
 
+  };
 };
 
 module.exports = new actions();

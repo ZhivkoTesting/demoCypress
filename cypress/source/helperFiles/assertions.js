@@ -1,11 +1,12 @@
 "use strict";
-const { count } = require("console");
-const actions = require("../helperFiles/actions.js");
 
+let elNameLabel = ("label.ng-binding")
 let assertions = function () {
     this.valNuberTasks = function (count) {
         cy.get('ul.todo-list li').should('have.length', count)
     }
-
+ this.valDeletedTask = function (task) {
+     cy.get(elNameLabel).contains(task.name).should('not.exist')
+ }
 };
 module.exports = new assertions();

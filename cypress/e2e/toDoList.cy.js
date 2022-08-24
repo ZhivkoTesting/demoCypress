@@ -13,12 +13,34 @@ describe('Demo ToDo List', () => {
   });
 
   it("Shall create new tasks", function () {
-    for (let newTask of data.newTasks) {
+    for (let newTask of data.tasks) {
       pageObjects.newTaskCreator(newTask)
     }
   });
 
   it("Shall validate the number of created tasks", function () {
-    assertions.valNuberTasks(data.newTasks.length)
+    assertions.valNuberTasks(data.tasks.length)
   });
+
+  it("Shall mark tasks as compleated", function () {
+    for (let newTask of data.tasks) {
+      pageObjects.doneSelector(newTask)
+    }
+  });
+
+  it("Shall delete task", function () {
+    for (let newTask of data.tasks) {
+      pageObjects.deleteTask(newTask)
+    }
+  });
+
+  it("Shall validate the deleted task", function () {
+    for (let newTask of data.tasks) {
+      if (newTask.toBeDeleted) {
+        assertions.valDeletedTask(newTask)
+      }
+
+    }
+  });
+
 });
