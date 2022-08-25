@@ -18,5 +18,8 @@ let pageObjects = function () {
             }) // the button is hiden but can be clicked
         }
     };
+    this.deleteCompleated = function(){
+    actions.clickButtonByText("Clear completed")
+    }
 }
 module.exports = new pageObjects();

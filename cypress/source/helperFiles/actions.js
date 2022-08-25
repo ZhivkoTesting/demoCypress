@@ -12,7 +12,6 @@ let actions = function () {
     });
 
   };
-
   this.inputText = function (element, input, index) {
     if (input === undefined) {
       return;
@@ -74,6 +73,18 @@ let actions = function () {
     }).eq(index).click({
       force: true
     }, {
+      timeout: 10000
+    });
+
+  };
+  this.clickButtonByText = function (text, index) {
+    if (!index) {
+      index = 0;
+    }
+    cy.wait(1500)
+    cy.get('button', {
+      timeout: 10000
+    }).contains(text).eq(index).click({
       timeout: 10000
     });
 

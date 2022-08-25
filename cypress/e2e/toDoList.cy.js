@@ -39,8 +39,14 @@ describe('Demo ToDo List', () => {
       if (newTask.toBeDeleted) {
         assertions.valDeletedTask(newTask)
       }
-
     }
   });
+
+  it("Shall delete the compleated tasks", function () {
+    pageObjects.deleteCompleated()
+    assertions.valCompleatedDeleated()
+  });
+
+
 
 });
