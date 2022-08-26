@@ -47,6 +47,4 @@ describe('Demo ToDo List', () => {
     assertions.valCompleatedDeleated()
   });
 
-
-
 });
